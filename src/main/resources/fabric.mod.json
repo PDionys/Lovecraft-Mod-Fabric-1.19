@@ -24,6 +24,10 @@
       "net.pdeins.lovecraftmod.LovecraftMod"
     ]
   },
+  "mixins": [
+    "lovecraftmod.mixins.json"
+  ],
+
   "depends": {
     "fabricloader": ">=${loader_version}",
     "fabric": "*",

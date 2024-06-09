@@ -1,6 +1,8 @@
 package net.pdeins.lovecraftmod;
 
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
+import net.pdeins.lovecraftmod.event.PlayerTickHandler;
 import net.pdeins.lovecraftmod.item.ModItemGroup;
 import net.pdeins.lovecraftmod.item.ModItems;
 import net.pdeins.lovecraftmod.networking.ModPackets;
@@ -18,5 +20,7 @@ public class LovecraftMod implements ModInitializer {
         ModItems.registerModItem();
 
         ModPackets.registerC2SPackets();
+
+        ServerTickEvents.START_SERVER_TICK.register(new PlayerTickHandler());
     }
 }

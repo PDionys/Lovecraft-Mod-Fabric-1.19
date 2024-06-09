@@ -20,9 +20,7 @@ public class KeyInputHandler {
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             if(testingKey.wasPressed()){
                 //Something is doing when the key is pressed
-                client.player.sendMessage(Text.literal("Hello minecraft World" ));
-                ClientPlayNetworking.send(ModPackets.EXAMPLE_ID, PacketByteBufs.create());
-                //count++;
+                ClientPlayNetworking.send(ModPackets.PLUS_SANITY_ID, PacketByteBufs.create());
             }
         });
     }

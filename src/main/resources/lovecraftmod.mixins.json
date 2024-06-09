@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.pdeins.lovecraftmod.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "ModEntityDataSaverMixin"
+  ],
+  "client": [
+    "ExampleMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
