@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "lovecraftmod",
+  "version": "${version}",
+
+  "name": "Lovecraft-Mod-Fabric-1.19",
+  "description": "",
+  "authors": [
+    "P.Denis"
+  ],
+  "contact": {
+    "repo": "https://github.com/das/Lovecraft-Mod-Fabric-1.19"
+  },
+
+  "license": "All-Rights-Reserved",
+  "icon": "assets/lovecraftmod/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "net.pdeins.lovecraftmod.client.LovecraftModClient"
+    ],
+    "main": [
+      "net.pdeins.lovecraftmod.LovecraftMod"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
