@@ -3,6 +3,7 @@ package net.pdeins.lovecraftmod;
 import net.fabricmc.api.ModInitializer;
 import net.pdeins.lovecraftmod.item.ModItemGroup;
 import net.pdeins.lovecraftmod.item.ModItems;
+import net.pdeins.lovecraftmod.networking.ModPackets;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,5 +16,7 @@ public class LovecraftMod implements ModInitializer {
         ModItemGroup.registerModItemGroup();
 
         ModItems.registerModItem();
+
+        ModPackets.registerC2SPackets();
     }
 }
