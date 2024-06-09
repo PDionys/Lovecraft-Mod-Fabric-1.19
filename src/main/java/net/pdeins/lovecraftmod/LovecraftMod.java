@@ -1,6 +1,8 @@
 package net.pdeins.lovecraftmod;
 
 import net.fabricmc.api.ModInitializer;
+import net.pdeins.lovecraftmod.item.ModItemGroup;
+import net.pdeins.lovecraftmod.item.ModItems;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -10,6 +12,8 @@ public class LovecraftMod implements ModInitializer {
 
     @Override
     public void onInitialize() {
+        ModItemGroup.registerModItemGroup();
 
+        ModItems.registerModItem();
     }
 }
