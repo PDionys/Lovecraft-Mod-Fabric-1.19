@@ -1,4 +1,8 @@
 {
   "item.lovecraftmod.lovecraft_mod_symbol": "Lovecraft Mod Symbol",
-  "itemGroup.lovecraftmod.lovecraft_group": "H.P. Lovecraft Mod"
+
+  "itemGroup.lovecraftmod.lovecraft_group": "H.P. Lovecraft Mod",
+
+  "key.category.lovecraftmod.test": "Test Category",
+  "key.lovecraftmod.test_logic": "Test Logic"
 }
