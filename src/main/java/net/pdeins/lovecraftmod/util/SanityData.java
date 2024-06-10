@@ -2,11 +2,9 @@ package net.pdeins.lovecraftmod.util;
 
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.server.network.ServerPlayerEntity;
-import net.pdeins.lovecraftmod.mixin.ModEntityDataSaverMixin;
 import net.pdeins.lovecraftmod.networking.ModPackets;
 
 public class SanityData {
@@ -33,7 +31,6 @@ public class SanityData {
 
         if(sanity - amount <= 0){
             sanity = 0;
-            //((PlayerEntity) player).setHealth(0.0f);
             ((ServerPlayerEntity) player).kill();
         }else {
             sanity -= amount;
