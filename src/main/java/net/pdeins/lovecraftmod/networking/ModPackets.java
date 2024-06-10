@@ -1,10 +1,12 @@
 package net.pdeins.lovecraftmod.networking;
 
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.util.Identifier;
 import net.pdeins.lovecraftmod.LovecraftMod;
 import net.pdeins.lovecraftmod.networking.packet.ExampleC2SPacket;
 import net.pdeins.lovecraftmod.networking.packet.SanityC2SPacket;
+import net.pdeins.lovecraftmod.networking.packet.SanitySyncDataS2CPacket;
 
 public class ModPackets {
     public static final Identifier PLUS_SANITY_ID = new Identifier(LovecraftMod.MOD_ID, "plus_sanity");
@@ -17,7 +19,7 @@ public class ModPackets {
     }
 
     public static void registerS2CPackets(){
-
+        ClientPlayNetworking.registerGlobalReceiver(SANITY_SYNC_ID, SanitySyncDataS2CPacket::receive);
     }
 
 }

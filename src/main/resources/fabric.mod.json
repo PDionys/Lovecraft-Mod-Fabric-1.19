@@ -18,7 +18,7 @@
   "environment": "*",
   "entrypoints": {
     "client": [
-      "net.pdeins.lovecraftmod.client.LovecraftModClient"
+      "net.pdeins.lovecraftmod.LovecraftModClient"
     ],
     "main": [
       "net.pdeins.lovecraftmod.LovecraftMod"

@@ -1,8 +1,11 @@
 package net.pdeins.lovecraftmod.mixin;
 
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.Entity;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.pdeins.lovecraftmod.util.IEntityDataSaver;
+import net.pdeins.lovecraftmod.util.SanityData;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -17,8 +20,11 @@ public abstract class ModEntityDataSaverMixin implements IEntityDataSaver {
     public NbtCompound getPersistentData() {
         if(this.persistentData == null){
             this.persistentData = new NbtCompound();
-            persistentData.putInt("sanity", 10);
+            persistentData.putInt("sanity", SanityData.getMaxSanity());
         }
+
+//        MinecraftClient player = MinecraftClient.getInstance();
+//        SanityData.syncSanity(persistentData.getInt("sanity"), ((ServerPlayerEntity) player));
         return persistentData;
     }
 

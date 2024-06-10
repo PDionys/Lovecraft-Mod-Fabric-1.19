@@ -14,6 +14,8 @@ public class PlayerTickHandler implements ServerTickEvents.StartTick{
     @Override
     public void onStartTick(MinecraftServer server) {
         for(ServerPlayerEntity player : server.getPlayerManager().getPlayerList()){
+            //TODO check how it work in online
+            SanityData.syncSanity(((IEntityDataSaver) player).getPersistentData().getInt("sanity"), player);
             if(new Random().nextFloat() <= 0.005f){
                 IEntityDataSaver dataPlayer = ((IEntityDataSaver) player);
                 SanityData.removeSanity(dataPlayer, 1);
