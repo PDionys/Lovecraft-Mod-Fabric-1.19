@@ -1,5 +1,5 @@
-[22:56:10] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 1.19.4 with Fabric Loader 0.15.11
-[22:56:11] [main/INFO] (FabricLoader) Loading 57 mods:
+[09:53:44] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 1.19.4 with Fabric Loader 0.15.11
+[09:53:45] [main/INFO] (FabricLoader) Loading 57 mods:
 	- fabric-api 0.87.2+1.19.4
 	- fabric-api-base 0.4.28+737a6ee8f4
 	- fabric-api-lookup-api-v1 1.6.29+504944c8f4
@@ -57,14 +57,14 @@
 	- lovecraftmod 0.0.1-1.19.4
 	- minecraft 1.19.4
 	- mixinextras 0.3.5
-[22:56:11] [main/INFO] (FabricLoader/Mixin) SpongePowered MIXIN Subsystem Version=0.8.5 Source=file:/C:/Users/das/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.13.3+mixin.0.8.5/9527e6b0d2449408958fd1302594dc65ec5ade9c/sponge-mixin-0.13.3+mixin.0.8.5.jar Service=Knot/Fabric Env=CLIENT
-[22:56:11] [main/INFO] (FabricLoader/Mixin) Loaded Fabric development mappings for mixin remapper!
-[22:56:11] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_16
-[22:56:11] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_17
-[22:56:15] [main/INFO] (FabricLoader/MixinExtras|Service) Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.3.5).
-[22:56:24] [Datafixer Bootstrap/INFO] (Minecraft) 180 Datafixer optimizations took 264 milliseconds
-[22:56:29] [Render thread/INFO] (Minecraft) Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
-[22:56:29] [Render thread/ERROR] (Minecraft) Failed to verify authentication
+[09:53:45] [main/INFO] (FabricLoader/Mixin) SpongePowered MIXIN Subsystem Version=0.8.5 Source=file:/C:/Users/das/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.13.3+mixin.0.8.5/9527e6b0d2449408958fd1302594dc65ec5ade9c/sponge-mixin-0.13.3+mixin.0.8.5.jar Service=Knot/Fabric Env=CLIENT
+[09:53:46] [main/INFO] (FabricLoader/Mixin) Loaded Fabric development mappings for mixin remapper!
+[09:53:46] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_16
+[09:53:46] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_17
+[09:53:49] [main/INFO] (FabricLoader/MixinExtras|Service) Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.3.5).
+[09:54:00] [Datafixer Bootstrap/INFO] (Minecraft) 180 Datafixer optimizations took 238 milliseconds
+[09:54:04] [Render thread/INFO] (Minecraft) Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[09:54:05] [Render thread/ERROR] (Minecraft) Failed to verify authentication
 com.mojang.authlib.exceptions.InvalidCredentialsException: Status: 401
 	at com.mojang.authlib.exceptions.MinecraftClientHttpException.toAuthenticationException(MinecraftClientHttpException.java:56) ~[authlib-3.18.38.jar:?]
 	at com.mojang.authlib.yggdrasil.YggdrasilUserApiService.fetchProperties(YggdrasilUserApiService.java:156) ~[authlib-3.18.38.jar:?]
@@ -82,152 +82,99 @@ Caused by: com.mojang.authlib.exceptions.MinecraftClientHttpException: Status: 4
 	at com.mojang.authlib.minecraft.client.MinecraftClient.get(MinecraftClient.java:48) ~[authlib-3.18.38.jar:?]
 	at com.mojang.authlib.yggdrasil.YggdrasilUserApiService.fetchProperties(YggdrasilUserApiService.java:129) ~[authlib-3.18.38.jar:?]
 	... 9 more
-[22:56:29] [Render thread/INFO] (Minecraft) Setting user: Player867
-[22:56:30] [Render thread/INFO] (Indigo) [Indigo] Registering Indigo renderer!
-[22:56:31] [Render thread/INFO] (Minecraft) Backend library: LWJGL version 3.3.1 SNAPSHOT
-[22:56:34] [Render thread/INFO] (Minecraft) Reloading ResourceManager: vanilla, fabric (fabric-crash-report-info-v1, fabric-resource-loader-v0, fabric-registry-sync-v0, fabric-particles-v1, fabric-client-tags-api-v1, fabric-api, fabric-command-api-v2, fabric-screen-handler-api-v1, fabric-convention-tags-v1, fabric-resource-conditions-api-v1, fabric-model-loading-api-v1, fabric-gametest-api-v1, fabric-item-api-v1, fabric-command-api-v1, fabric-containers-v0, fabric-sound-api-v1, fabric-rendering-fluids-v1, fabric-keybindings-v0, fabric-events-interaction-v0, fabric-transitive-access-wideners-v1, fabric-blockrenderlayer-v1, fabric-api-base, fabric-renderer-indigo, fabric-item-group-api-v1, fabricloader, fabric-networking-v0, fabric-api-lookup-api-v1, fabric-object-builder-api-v1, fabric-mining-level-api-v1, fabric-screen-api-v1, fabric-lifecycle-events-v1, fabric-events-lifecycle-v0, fabric-dimensions-v1, fabric-renderer-api-v1, fabric-transfer-api-v1, fabric-networking-api-v1, fabric-loot-tables-v1, fabric-key-binding-api-v1, fabric-data-generation-api-v1, lovecraftmod, fabric-models-v0, fabric-message-api-v1, fabric-rendering-v1, fabric-block-api-v1, fabric-entity-events-v1, fabric-game-rule-api-v1, fabric-renderer-registries-v1, fabric-content-registries-v0, fabric-biome-api-v1, fabric-loot-api-v2, fabric-recipe-api-v1, fabric-rendering-v0, fabric-rendering-data-attachment-v1, fabric-commands-v0)
-[22:56:34] [Render thread/INFO] (lovecraftmod) This line is printed by an example mod mixin!
-[22:56:34] [Realms Notification Availability checker #1/INFO] (Minecraft) Could not authorize you against Realms server: Invalid session id
-[22:56:38] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:item.brush.brushing
-[22:56:38] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:item.brush.brush_sand_completed
-[22:56:38] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:item.goat_horn.play
-[22:56:38] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:entity.goat.screaming.horn_break
-[22:56:38] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:music.overworld.cherry_grove
-[22:56:38] [Render thread/INFO] (Minecraft) OpenAL initialized on device OpenAL Soft on ???????? (High Definition Audio Device)
-[22:56:38] [Render thread/INFO] (Minecraft) Sound engine started
-[22:56:38] [Render thread/INFO] (Minecraft) Created: 1024x512x4 minecraft:textures/atlas/blocks.png-atlas
-[22:56:38] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
-[22:56:38] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
-[22:56:38] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
-[22:56:38] [Render thread/INFO] (Minecraft) Created: 1024x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
-[22:56:38] [Render thread/INFO] (Minecraft) Created: 64x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
-[22:56:38] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
-[22:56:38] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
-[22:56:38] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
-[22:56:39] [Render thread/WARN] (Minecraft) Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
-[22:56:39] [Render thread/INFO] (Minecraft) Created: 256x256x0 minecraft:textures/atlas/particles.png-atlas
-[22:56:39] [Render thread/INFO] (Minecraft) Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
-[22:56:39] [Render thread/INFO] (Minecraft) Created: 128x128x0 minecraft:textures/atlas/mob_effects.png-atlas
-[22:56:39] [Render thread/INFO] (lovecraftmod) This line is printed by an example mod mixin!
-[22:56:42] [Render thread/INFO] (lovecraftmod) This line is printed by an example mod mixin!
-[22:56:45] [Render thread/INFO] (Minecraft) Loaded 7 recipes
-[22:56:45] [Render thread/INFO] (Minecraft) Loaded 1179 advancements
-[22:56:46] [Render thread/INFO] (BiomeModificationImpl) Applied 0 biome modifications to 0 of 63 new biomes in 2.932 ms
-[22:56:46] [Server thread/INFO] (Minecraft) Starting integrated minecraft server version 1.19.4
-[22:56:46] [Server thread/INFO] (Minecraft) Generating keypair
-[22:56:50] [Server thread/INFO] (Minecraft) Preparing start region for dimension minecraft:overworld
-[22:56:56] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
-[22:56:56] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
-[22:56:56] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
-[22:56:56] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
-[22:56:56] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
-[22:56:56] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
-[22:56:56] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
-[22:56:56] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
-[22:56:56] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
-[22:56:56] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
-[22:56:56] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
-[22:56:56] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
-[22:56:56] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
-[22:56:56] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
-[22:56:57] [Render thread/INFO] (Minecraft) Preparing spawn area: 10%
-[22:56:57] [Render thread/INFO] (Minecraft) Preparing spawn area: 38%
-[22:56:58] [Render thread/INFO] (Minecraft) Time elapsed: 7986 ms
-[22:56:58] [Server thread/INFO] (Minecraft) Changing view distance to 6, from 10
-[22:56:58] [Server thread/INFO] (Minecraft) Changing simulation distance to 6, from 0
-[22:57:00] [Server thread/INFO] (Minecraft) Player867[local:E:54157c7d] logged in with entity id 178 at (-18.399528898241165, 72.0, 2.410366804848394)
-[22:57:00] [Server thread/INFO] (Minecraft) Player867 joined the game
-[22:57:01] [Render thread/INFO] (Minecraft) Loaded 5 advancements
-[22:57:07] [Render thread/INFO] (Minecraft) [System] [CHAT] Its a cow or pig!!!
-[22:57:07] [Render thread/INFO] (Minecraft) [System] [CHAT] Remove Sanity
-[22:57:07] [Render thread/INFO] (Minecraft) [System] [CHAT] Its a cow or pig!!!
-[22:57:07] [Render thread/INFO] (Minecraft) [System] [CHAT] Remove Sanity
-[22:57:07] [Render thread/INFO] (Minecraft) [System] [CHAT] Its a cow or pig!!!
-[22:57:07] [Render thread/INFO] (Minecraft) [System] [CHAT] Remove Sanity
-[22:57:07] [Render thread/INFO] (Minecraft) [System] [CHAT] Its a cow or pig!!!
-[22:57:07] [Render thread/INFO] (Minecraft) [System] [CHAT] Remove Sanity
-[22:57:07] [Render thread/INFO] (Minecraft) [System] [CHAT] Its a cow or pig!!!
-[22:57:07] [Render thread/INFO] (Minecraft) [System] [CHAT] Remove Sanity
-[22:57:07] [Render thread/INFO] (Minecraft) [System] [CHAT] Its a cow or pig!!!
-[22:57:07] [Render thread/INFO] (Minecraft) [System] [CHAT] Remove Sanity
-[22:57:07] [Render thread/INFO] (Minecraft) [System] [CHAT] Its a cow or pig!!!
-[22:57:07] [Render thread/INFO] (Minecraft) [System] [CHAT] Remove Sanity
-[22:57:07] [Render thread/INFO] (Minecraft) [System] [CHAT] Its a cow or pig!!!
-[22:57:07] [Render thread/INFO] (Minecraft) [System] [CHAT] Remove Sanity
-[22:57:11] [Render thread/INFO] (Minecraft) [System] [CHAT] Sanity: 2
-[22:57:11] [Render thread/INFO] (Minecraft) [System] [CHAT] Sanity: 3
-[22:57:11] [Render thread/INFO] (Minecraft) [System] [CHAT] Sanity: 4
-[22:57:11] [Render thread/INFO] (Minecraft) [System] [CHAT] Sanity: 5
-[22:57:11] [Render thread/INFO] (Minecraft) [System] [CHAT] Sanity: 6
-[22:57:11] [Render thread/INFO] (Minecraft) [System] [CHAT] Sanity: 7
-[22:57:12] [Render thread/INFO] (Minecraft) [System] [CHAT] Sanity: 8
-[22:57:12] [Render thread/INFO] (Minecraft) [System] [CHAT] Sanity: 9
-[22:57:12] [Render thread/INFO] (Minecraft) [System] [CHAT] Sanity: 10
-[22:57:14] [Render thread/INFO] (Minecraft) [System] [CHAT] Its a NOT cow!!!
-[22:57:14] [Render thread/INFO] (Minecraft) [System] [CHAT] Its a NOT cow!!!
-[22:57:14] [Render thread/INFO] (Minecraft) [System] [CHAT] Its a NOT cow!!!
-[22:57:14] [Render thread/INFO] (Minecraft) [System] [CHAT] Its a NOT cow!!!
-[22:57:14] [Render thread/INFO] (Minecraft) [System] [CHAT] Its a NOT cow!!!
-[22:57:14] [Render thread/INFO] (Minecraft) [System] [CHAT] Its a NOT cow!!!
-[22:57:14] [Render thread/INFO] (Minecraft) [System] [CHAT] Its a NOT cow!!!
-[22:57:14] [Render thread/INFO] (Minecraft) [System] [CHAT] Its a NOT cow!!!
-[22:57:14] [Render thread/INFO] (Minecraft) [System] [CHAT] Its a NOT cow!!!
-[22:57:14] [Render thread/INFO] (Minecraft) [System] [CHAT] Its a NOT cow!!!
-[22:57:14] [Render thread/INFO] (Minecraft) [System] [CHAT] Its a NOT cow!!!
-[22:57:15] [Render thread/INFO] (Minecraft) [System] [CHAT] Its a NOT cow!!!
-[22:57:15] [Render thread/INFO] (Minecraft) [System] [CHAT] Its a NOT cow!!!
-[22:57:15] [Render thread/INFO] (Minecraft) [System] [CHAT] Its a NOT cow!!!
-[22:57:15] [Render thread/INFO] (Minecraft) [System] [CHAT] Its a NOT cow!!!
-[22:57:15] [Render thread/INFO] (Minecraft) [System] [CHAT] Its a NOT cow!!!
-[22:57:15] [Render thread/INFO] (Minecraft) [System] [CHAT] Its a NOT cow!!!
-[22:57:15] [Render thread/INFO] (Minecraft) [System] [CHAT] Its a NOT cow!!!
-[22:57:26] [Render thread/INFO] (Minecraft) [System] [CHAT] Its a cow or pig!!!
-[22:57:26] [Render thread/INFO] (Minecraft) [System] [CHAT] Remove Sanity
-[22:57:26] [Render thread/INFO] (Minecraft) [System] [CHAT] Its a cow or pig!!!
-[22:57:26] [Render thread/INFO] (Minecraft) [System] [CHAT] Remove Sanity
-[22:57:26] [Render thread/INFO] (Minecraft) [System] [CHAT] Its a cow or pig!!!
-[22:57:26] [Render thread/INFO] (Minecraft) [System] [CHAT] Remove Sanity
-[22:57:26] [Render thread/INFO] (Minecraft) [System] [CHAT] Its a cow or pig!!!
-[22:57:26] [Render thread/INFO] (Minecraft) [System] [CHAT] Remove Sanity
-[22:57:26] [Render thread/INFO] (Minecraft) [System] [CHAT] Its a cow or pig!!!
-[22:57:26] [Render thread/INFO] (Minecraft) [System] [CHAT] Remove Sanity
-[22:57:26] [Render thread/INFO] (Minecraft) [System] [CHAT] Its a cow or pig!!!
-[22:57:26] [Render thread/INFO] (Minecraft) [System] [CHAT] Remove Sanity
-[22:57:26] [Render thread/INFO] (Minecraft) [System] [CHAT] Its a cow or pig!!!
-[22:57:26] [Render thread/INFO] (Minecraft) [System] [CHAT] Remove Sanity
-[22:57:26] [Render thread/INFO] (Minecraft) [System] [CHAT] Its a cow or pig!!!
-[22:57:26] [Render thread/INFO] (Minecraft) [System] [CHAT] Remove Sanity
-[22:57:26] [Render thread/INFO] (Minecraft) [System] [CHAT] Its a cow or pig!!!
-[22:57:26] [Render thread/INFO] (Minecraft) [System] [CHAT] Remove Sanity
-[22:57:30] [Render thread/INFO] (Minecraft) [System] [CHAT] Sanity: 2
-[22:57:30] [Render thread/INFO] (Minecraft) [System] [CHAT] Sanity: 3
-[22:57:30] [Render thread/INFO] (Minecraft) [System] [CHAT] Sanity: 4
-[22:57:30] [Render thread/INFO] (Minecraft) [System] [CHAT] Sanity: 5
-[22:57:30] [Render thread/INFO] (Minecraft) [System] [CHAT] Sanity: 6
-[22:57:30] [Render thread/INFO] (Minecraft) [System] [CHAT] Sanity: 7
-[22:57:31] [Render thread/INFO] (Minecraft) [System] [CHAT] Sanity: 8
-[22:57:31] [Render thread/INFO] (Minecraft) [System] [CHAT] Sanity: 9
-[22:57:31] [Render thread/INFO] (Minecraft) [System] [CHAT] Sanity: 10
-[22:57:31] [Render thread/INFO] (Minecraft) [System] [CHAT] Sanity: 10
-[22:57:37] [Render thread/INFO] (Minecraft) [System] [CHAT] Its a NOT cow!!!
-[22:57:37] [Render thread/INFO] (Minecraft) [System] [CHAT] Its a NOT cow!!!
-[22:57:37] [Render thread/INFO] (Minecraft) [System] [CHAT] Its a NOT cow!!!
-[22:57:37] [Render thread/INFO] (Minecraft) [System] [CHAT] Its a NOT cow!!!
-[22:57:45] [Server thread/INFO] (Minecraft) Saving and pausing game...
-[22:57:45] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[22:57:45] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[22:57:45] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[22:57:47] [Render thread/INFO] (Minecraft) Stopping!
-[22:57:47] [Server thread/INFO] (Minecraft) Player867 lost connection: Disconnected
-[22:57:47] [Server thread/INFO] (Minecraft) Player867 left the game
-[22:57:47] [Server thread/INFO] (Minecraft) Stopping singleplayer server as player logged out
-[22:57:47] [Server thread/INFO] (Minecraft) Stopping server
-[22:57:47] [Server thread/INFO] (Minecraft) Saving players
-[22:57:47] [Server thread/INFO] (Minecraft) Saving worlds
-[22:57:48] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[22:57:48] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[22:57:48] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[22:57:48] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (New World): All chunks are saved
-[22:57:48] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[22:57:48] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[22:57:48] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage: All dimensions are saved
+[09:54:05] [Render thread/INFO] (Minecraft) Setting user: Player192
+[09:54:06] [Render thread/INFO] (Indigo) [Indigo] Registering Indigo renderer!
+[09:54:07] [Render thread/INFO] (Minecraft) Backend library: LWJGL version 3.3.1 SNAPSHOT
+[09:54:09] [Render thread/INFO] (Minecraft) Reloading ResourceManager: vanilla, fabric (fabric-screen-handler-api-v1, fabric-blockrenderlayer-v1, fabric-rendering-v0, fabric-lifecycle-events-v1, fabric-rendering-data-attachment-v1, fabric-api-base, fabric-mining-level-api-v1, fabric-rendering-fluids-v1, fabric-client-tags-api-v1, fabric-renderer-api-v1, fabricloader, fabric-content-registries-v0, fabric-api, fabric-command-api-v1, fabric-loot-tables-v1, fabric-object-builder-api-v1, fabric-item-api-v1, fabric-transfer-api-v1, fabric-command-api-v2, fabric-block-api-v1, fabric-renderer-registries-v1, fabric-keybindings-v0, fabric-biome-api-v1, fabric-commands-v0, fabric-resource-conditions-api-v1, fabric-particles-v1, fabric-key-binding-api-v1, fabric-screen-api-v1, fabric-game-rule-api-v1, fabric-gametest-api-v1, fabric-transitive-access-wideners-v1, fabric-resource-loader-v0, fabric-rendering-v1, fabric-networking-v0, fabric-item-group-api-v1, fabric-loot-api-v2, fabric-entity-events-v1, fabric-events-interaction-v0, fabric-containers-v0, fabric-message-api-v1, fabric-recipe-api-v1, fabric-networking-api-v1, lovecraftmod, fabric-registry-sync-v0, fabric-model-loading-api-v1, fabric-renderer-indigo, fabric-api-lookup-api-v1, fabric-models-v0, fabric-events-lifecycle-v0, fabric-convention-tags-v1, fabric-dimensions-v1, fabric-data-generation-api-v1, fabric-sound-api-v1, fabric-crash-report-info-v1)
+[09:54:10] [Render thread/INFO] (lovecraftmod) This line is printed by an example mod mixin!
+[09:54:10] [Realms Notification Availability checker #1/INFO] (Minecraft) Could not authorize you against Realms server: Invalid session id
+[09:54:13] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:item.brush.brushing
+[09:54:13] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:item.brush.brush_sand_completed
+[09:54:13] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:item.goat_horn.play
+[09:54:13] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:entity.goat.screaming.horn_break
+[09:54:13] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:music.overworld.cherry_grove
+[09:54:13] [Render thread/INFO] (Minecraft) OpenAL initialized on device OpenAL Soft on ???????? (High Definition Audio Device)
+[09:54:13] [Render thread/INFO] (Minecraft) Sound engine started
+[09:54:13] [Render thread/INFO] (Minecraft) Created: 1024x512x4 minecraft:textures/atlas/blocks.png-atlas
+[09:54:13] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
+[09:54:13] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
+[09:54:13] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
+[09:54:13] [Render thread/INFO] (Minecraft) Created: 1024x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
+[09:54:13] [Render thread/INFO] (Minecraft) Created: 64x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
+[09:54:13] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
+[09:54:13] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
+[09:54:13] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
+[09:54:13] [Render thread/WARN] (Minecraft) Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
+[09:54:13] [Render thread/INFO] (Minecraft) Created: 256x256x0 minecraft:textures/atlas/particles.png-atlas
+[09:54:13] [Render thread/INFO] (Minecraft) Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
+[09:54:13] [Render thread/INFO] (Minecraft) Created: 128x128x0 minecraft:textures/atlas/mob_effects.png-atlas
+[09:54:13] [Render thread/INFO] (lovecraftmod) This line is printed by an example mod mixin!
+[09:54:32] [Render thread/INFO] (Minecraft) Loaded 7 recipes
+[09:54:33] [Render thread/INFO] (Minecraft) Loaded 1179 advancements
+[09:54:34] [Render thread/INFO] (BiomeModificationImpl) Applied 0 biome modifications to 0 of 63 new biomes in 2.965 ms
+[09:54:34] [Server thread/INFO] (Minecraft) Starting integrated minecraft server version 1.19.4
+[09:54:34] [Server thread/INFO] (Minecraft) Generating keypair
+[09:54:37] [Server thread/INFO] (Minecraft) Preparing start region for dimension minecraft:overworld
+[09:54:44] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
+[09:54:44] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
+[09:54:44] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
+[09:54:44] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
+[09:54:44] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
+[09:54:44] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
+[09:54:44] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
+[09:54:44] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
+[09:54:44] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
+[09:54:44] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
+[09:54:44] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
+[09:54:44] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
+[09:54:44] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
+[09:54:44] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
+[09:54:44] [Render thread/INFO] (Minecraft) Preparing spawn area: 23%
+[09:54:45] [Render thread/INFO] (Minecraft) Preparing spawn area: 97%
+[09:54:45] [Render thread/INFO] (Minecraft) Time elapsed: 7569 ms
+[09:54:45] [Server thread/INFO] (Minecraft) Changing view distance to 6, from 10
+[09:54:45] [Server thread/INFO] (Minecraft) Changing simulation distance to 6, from 0
+[09:54:47] [Server thread/INFO] (Minecraft) Player192[local:E:3f0513cf] logged in with entity id 255 at (-5.55529909828582, 84.68292493599476, -1.0704794928303152)
+[09:54:47] [Server thread/INFO] (Minecraft) Player192 joined the game
+[09:54:48] [Render thread/INFO] (Minecraft) Loaded 4 advancements
+[09:54:59] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[09:54:59] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[09:55:00] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[09:55:00] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[09:55:08] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[09:55:08] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[09:55:08] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[09:55:08] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[09:55:11] [Render thread/ERROR] (Minecraft) ########## GL ERROR ##########
+[09:55:11] [Render thread/ERROR] (Minecraft) @ Render
+[09:55:11] [Render thread/ERROR] (Minecraft) 65540: Invalid scancode -1
+[09:55:28] [Render thread/INFO] (Minecraft) [System] [CHAT] Sanity: 7
+[09:55:28] [Render thread/INFO] (Minecraft) [System] [CHAT] Sanity: 8
+[09:55:28] [Render thread/INFO] (Minecraft) [System] [CHAT] Sanity: 9
+[09:55:28] [Render thread/INFO] (Minecraft) [System] [CHAT] Sanity: 10
+[09:55:48] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[09:55:48] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[09:55:48] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[09:55:48] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[09:55:49] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[09:55:49] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[09:55:49] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[09:55:49] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[09:55:50] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[09:55:50] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[09:55:50] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[09:55:50] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[10:03:33] [Render thread/INFO] (Minecraft) Stopping!
+[10:03:33] [Server thread/INFO] (Minecraft) Player192 lost connection: Disconnected
+[10:03:33] [Server thread/INFO] (Minecraft) Player192 left the game
+[10:03:33] [Server thread/INFO] (Minecraft) Stopping singleplayer server as player logged out
+[10:03:33] [Server thread/INFO] (Minecraft) Stopping server
+[10:03:33] [Server thread/INFO] (Minecraft) Saving players
+[10:03:33] [Server thread/INFO] (Minecraft) Saving worlds
+[10:03:34] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[10:03:34] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[10:03:34] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[10:03:34] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (New World): All chunks are saved
+[10:03:34] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[10:03:34] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[10:03:34] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage: All dimensions are saved
