@@ -4,5 +4,8 @@
   "itemGroup.lovecraftmod.lovecraft_group": "H.P. Lovecraft Mod",
 
   "key.category.lovecraftmod.test": "Test Category",
-  "key.lovecraftmod.test_logic": "Test Logic"
+  "key.lovecraftmod.test_logic": "Test Logic",
+
+  "key.lovecraftmod.open_journal": "Open Journal",
+  "screen.lovecraftmod.screen_title": "Journal"
 }
