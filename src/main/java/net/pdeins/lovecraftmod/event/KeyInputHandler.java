@@ -9,9 +9,11 @@ import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
 
 
+import net.minecraft.sound.SoundCategory;
 import net.minecraft.text.Text;
 import net.pdeins.lovecraftmod.client.screen.JournalScreen;
 import net.pdeins.lovecraftmod.networking.ModPackets;
+import net.pdeins.lovecraftmod.sound.ModSounds;
 import org.lwjgl.glfw.GLFW;
 
 public class KeyInputHandler {
@@ -35,6 +37,7 @@ public class KeyInputHandler {
                 MinecraftClient.getInstance().setScreen(
                         new JournalScreen(Text.translatable("screen.lovecraftmod.screen_title"))
                 );
+                ClientPlayNetworking.send(ModPackets.PLAY_SOUND_ID, PacketByteBufs.create());
                 client.player.sendMessage(Text.literal("Journal Opened"));
             }
         });

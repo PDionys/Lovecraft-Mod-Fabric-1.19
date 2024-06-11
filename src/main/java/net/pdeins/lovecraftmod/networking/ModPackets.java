@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.util.Identifier;
 import net.pdeins.lovecraftmod.LovecraftMod;
 import net.pdeins.lovecraftmod.networking.packet.ExampleC2SPacket;
+import net.pdeins.lovecraftmod.networking.packet.PlaySoundC2SPacket;
 import net.pdeins.lovecraftmod.networking.packet.SanityC2SPacket;
 import net.pdeins.lovecraftmod.networking.packet.SanitySyncDataS2CPacket;
 
@@ -12,10 +13,12 @@ public class ModPackets {
     public static final Identifier PLUS_SANITY_ID = new Identifier(LovecraftMod.MOD_ID, "plus_sanity");
     public static final Identifier SANITY_SYNC_ID = new Identifier(LovecraftMod.MOD_ID, "sanity_sync");
     public static final Identifier EXAMPLE_ID = new Identifier(LovecraftMod.MOD_ID, "example");
+    public static final Identifier PLAY_SOUND_ID = new Identifier(LovecraftMod.MOD_ID, "play_sound");
 
     public static void registerC2SPackets(){
         ServerPlayNetworking.registerGlobalReceiver(EXAMPLE_ID, ExampleC2SPacket::receive);
         ServerPlayNetworking.registerGlobalReceiver(PLUS_SANITY_ID, SanityC2SPacket::receive);
+        ServerPlayNetworking.registerGlobalReceiver(PLAY_SOUND_ID, PlaySoundC2SPacket::receive);
     }
 
     public static void registerS2CPackets(){

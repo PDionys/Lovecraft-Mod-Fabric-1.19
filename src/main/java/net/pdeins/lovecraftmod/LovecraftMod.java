@@ -6,6 +6,7 @@ import net.pdeins.lovecraftmod.event.PlayerTickHandler;
 import net.pdeins.lovecraftmod.item.ModItemGroup;
 import net.pdeins.lovecraftmod.item.ModItems;
 import net.pdeins.lovecraftmod.networking.ModPackets;
+import net.pdeins.lovecraftmod.sound.ModSounds;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,6 +21,8 @@ public class LovecraftMod implements ModInitializer {
         ModItems.registerModItem();
 
         ModPackets.registerC2SPackets();
+
+        ModSounds.initialize();
 
         ServerTickEvents.START_SERVER_TICK.register(new PlayerTickHandler());
     }
