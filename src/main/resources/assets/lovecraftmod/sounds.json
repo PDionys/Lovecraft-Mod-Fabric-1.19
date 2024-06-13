@@ -3,5 +3,11 @@
     "sounds": [
       "lovecraftmod:open_book"
     ]
+  },
+
+  "page_turn": {
+    "sounds": [
+      "lovecraftmod:page_turn"
+    ]
   }
 }

@@ -8,14 +8,13 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.pdeins.lovecraftmod.sound.ModSounds;
 
-public class PlaySoundC2SPacket {
+public class PlayPageTurnSoundC2SPacket {
     public static void receive(MinecraftServer server, ServerPlayerEntity player, ServerPlayNetworkHandler handler,
                                PacketByteBuf buf, PacketSender responseSender){
-        //TODO make open sound faster
         player.getWorld().playSound(
                 null,
                 player.getBlockPos(),
-                ModSounds.OPEN_BOOK_SOUND,
+                ModSounds.PAGE_TURN_SOUND,
                 SoundCategory.PLAYERS,
                 1f,1f
         );

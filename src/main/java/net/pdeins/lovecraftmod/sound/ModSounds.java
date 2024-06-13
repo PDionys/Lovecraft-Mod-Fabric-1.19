@@ -7,9 +7,8 @@ import net.minecraft.util.Identifier;
 import net.pdeins.lovecraftmod.LovecraftMod;
 
 public class ModSounds {
-//    public static final Identifier OPEN_BOOK_SOUND_ID = new Identifier(LovecraftMod.MOD_ID, "open_book");
-//    public static SoundEvent OPEN_BOOK_SOUND_EVENT = SoundEvent.of(OPEN_BOOK_SOUND_ID);
     public static final SoundEvent OPEN_BOOK_SOUND = registerSound("open_book");
+    public static final SoundEvent PAGE_TURN_SOUND = registerSound("page_turn");
 
     private ModSounds(){
 

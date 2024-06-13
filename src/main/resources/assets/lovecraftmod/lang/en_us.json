@@ -7,5 +7,7 @@
   "key.lovecraftmod.test_logic": "Test Logic",
 
   "key.lovecraftmod.open_journal": "Open Journal",
-  "screen.lovecraftmod.screen_title": "Journal"
+  "screen.lovecraftmod.screen_title": "Journal",
+  "note.lovecraftmod.firstspawn_p1": "Day 1\nI have awakened in a world unlike any I've known. The land stretches out in perfect cubes, an unnatural geometry that defies nature. The sky above is a blank canvas, void of stars or clouds. Everything is a block, from the trees to the very ground I stand on.",
+  "note.lovecraftmod.firstspawn_p2": "There is an unsettling silence, broken only by the occasional distant groan. What is this place? How did I come to be here? I must find answers, but for now, I will mark this as my first day in the Cube World."
 }
