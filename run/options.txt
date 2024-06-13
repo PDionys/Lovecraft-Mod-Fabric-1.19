@@ -120,7 +120,7 @@ key_key.hotbar.8:key.keyboard.8
 key_key.hotbar.9:key.keyboard.9
 key_key.lovecraftmod.test_logic:key.keyboard.o
 key_key.lovecraftmod.open_journal:key.keyboard.j
-soundCategory_master:0.5
+soundCategory_master:1.0
 soundCategory_music:1.0
 soundCategory_record:1.0
 soundCategory_weather:1.0
