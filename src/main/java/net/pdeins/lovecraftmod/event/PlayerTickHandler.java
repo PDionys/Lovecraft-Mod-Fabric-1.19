@@ -10,6 +10,7 @@ import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.LightType;
 import net.pdeins.lovecraftmod.util.IEntityDataSaver;
+import net.pdeins.lovecraftmod.util.JournalData;
 import net.pdeins.lovecraftmod.util.RaycastEntity;
 import net.pdeins.lovecraftmod.util.SanityData;
 
@@ -20,7 +21,9 @@ public class PlayerTickHandler implements ServerTickEvents.StartTick{
     public void onStartTick(MinecraftServer server) {
         for(ServerPlayerEntity player : server.getPlayerManager().getPlayerList()){
             //TODO check how it work in online
+            //Sync server data with client
             SanityData.syncSanity(((IEntityDataSaver) player).getPersistentData().getInt("sanity"), player);
+            JournalData.syncJournal(player, ((IEntityDataSaver) player).getPersistentData());
             // Method for decrease sanity in the dark
             sanityDecreaseInTheDark(player);
             // Method for decrease sanity when looking on target mob

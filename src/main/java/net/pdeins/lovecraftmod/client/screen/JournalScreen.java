@@ -39,12 +39,12 @@ public class JournalScreen extends Screen {
     //create method of construct this dictionary from ListString
     //create functionality of page changes
 
-    public JournalScreen(Text title, int pageNum) {
+    public JournalScreen(Text title, int pageNum, HashMap<Integer, String> pages) {
         super(title);
 
-        pages.put(0, "note.lovecraftmod.firstspawn_p1");
-        pages.put(1, "note.lovecraftmod.firstspawn_p2");
-
+//        pages.put(0, "note.lovecraftmod.firstspawn_p1");
+//        pages.put(1, "note.lovecraftmod.firstspawn_p2");
+        this.pages = pages;
         this.pageNum = pageNum;
     }
 
@@ -71,7 +71,11 @@ public class JournalScreen extends Screen {
         }else if(pageNum == pages.size()-1){
             nextButton = false;
             prevButton = true;
-//            renderNextPageTexture(matrices, texturePosX, texturePosY, mouseX, mouseY);
+            renderPrevPageTexture(matrices, texturePosX, texturePosY, mouseX, mouseY);
+        }else{
+            nextButton = true;
+            prevButton = true;
+            renderNextPageTexture(matrices, texturePosX, texturePosY, mouseX, mouseY);
             renderPrevPageTexture(matrices, texturePosX, texturePosY, mouseX, mouseY);
         }
 
@@ -119,7 +123,7 @@ public class JournalScreen extends Screen {
                 break;
         }
         MinecraftClient.getInstance().setScreen(
-                new JournalScreen(Text.translatable("screen.lovecraftmod.screen_title"), pageNum)
+                new JournalScreen(Text.translatable("screen.lovecraftmod.screen_title"), pageNum, this.pages)
         );
         //set old cursor position
         GLFW.glfwSetCursorPos(client.getWindow().getHandle(), mouseX, mouseY);

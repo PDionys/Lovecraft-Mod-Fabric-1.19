@@ -12,7 +12,12 @@ import net.minecraft.client.util.InputUtil;
 import net.minecraft.text.Text;
 import net.pdeins.lovecraftmod.client.screen.JournalScreen;
 import net.pdeins.lovecraftmod.networking.ModPackets;
+import net.pdeins.lovecraftmod.util.IEntityDataSaver;
+import net.pdeins.lovecraftmod.util.JournalData;
+import net.pdeins.lovecraftmod.util.SanityData;
 import org.lwjgl.glfw.GLFW;
+
+import java.util.HashMap;
 
 public class KeyInputHandler {
     public static final String KEY_CATEGORY_TEST = "key.category.lovecraftmod.test";
@@ -28,13 +33,16 @@ public class KeyInputHandler {
                 //Something is doing when the key is pressed
 
                 ClientPlayNetworking.send(ModPackets.PLUS_SANITY_ID, PacketByteBufs.create());
-                ClientPlayNetworking.send(ModPackets.PLAY_SOUND_PAGE_TURN_ID, PacketByteBufs.create());
+//                ClientPlayNetworking.send(ModPackets.PLAY_SOUND_PAGE_TURN_ID, PacketByteBufs.create());
+                ClientPlayNetworking.send(ModPackets.ADD_JOURNAL_ID, PacketByteBufs.create());
             }
 
             if(journalKey.wasPressed()){
+                //Get Journal List
+                HashMap<Integer, String> pages = JournalData.getJournalList(((IEntityDataSaver) client.player));
                 //Journal key LOGIC
                 MinecraftClient.getInstance().setScreen(
-                        new JournalScreen(Text.translatable("screen.lovecraftmod.screen_title"), 0)
+                        new JournalScreen(Text.translatable("screen.lovecraftmod.screen_title"), 0, pages)
                 );
                 ClientPlayNetworking.send(ModPackets.PLAY_SOUND_BOOK_OPEN_ID, PacketByteBufs.create());
             }

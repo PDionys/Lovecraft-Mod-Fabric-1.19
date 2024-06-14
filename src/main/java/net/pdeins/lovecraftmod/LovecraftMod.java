@@ -1,6 +1,7 @@
 package net.pdeins.lovecraftmod;
 
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.pdeins.lovecraftmod.event.PlayerTickHandler;
 import net.pdeins.lovecraftmod.item.ModItemGroup;
@@ -25,5 +26,11 @@ public class LovecraftMod implements ModInitializer {
         ModSounds.initialize();
 
         ServerTickEvents.START_SERVER_TICK.register(new PlayerTickHandler());
+
+        ServerPlayerEvents.COPY_FROM.register((oldPlayer, newPlayer, alive) -> {
+            if(!alive){
+                System.out.println("This time to copy data!!!");
+            }
+        });
     }
 }
