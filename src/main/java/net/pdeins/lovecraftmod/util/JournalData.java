@@ -1,5 +1,6 @@
 package net.pdeins.lovecraftmod.util;
 
+import net.fabricmc.fabric.api.entity.FakePlayer;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.nbt.NbtCompound;
@@ -43,6 +44,13 @@ public class JournalData {
         }
 
         return journalList;
+    }
+
+    public static void saveJournalAfterDeath(ServerPlayerEntity oldPlayer, ServerPlayerEntity newPlayer){
+        NbtCompound oldNbt = ((IEntityDataSaver) oldPlayer).getPersistentData();
+        NbtCompound newNbt = ((IEntityDataSaver) newPlayer).getPersistentData();
+
+        newNbt.put("journalList", oldNbt.getList("journalList", 8));
     }
 
 }

@@ -23,6 +23,7 @@ public abstract class ModEntityDataSaverMixin implements IEntityDataSaver {
             //after death it performs
             this.persistentData = new NbtCompound();
             persistentData.putInt("sanity", SanityData.getMaxSanity());
+            persistentData.putBoolean("spawnin_world", false);
         }
 
         return persistentData;

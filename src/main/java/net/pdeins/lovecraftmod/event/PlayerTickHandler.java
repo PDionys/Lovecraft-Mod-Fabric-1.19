@@ -3,9 +3,13 @@ package net.pdeins.lovecraftmod.event;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.mob.*;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
+import net.minecraft.registry.Registry;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.LightType;
@@ -16,6 +20,7 @@ import net.pdeins.lovecraftmod.util.SanityData;
 
 public class PlayerTickHandler implements ServerTickEvents.StartTick{
     private static int darkTickCount, mobTickCount = 0;
+    private boolean haveFlower = false;
 
     @Override
     public void onStartTick(MinecraftServer server) {
@@ -28,7 +33,24 @@ public class PlayerTickHandler implements ServerTickEvents.StartTick{
             sanityDecreaseInTheDark(player);
             // Method for decrease sanity when looking on target mob
             sanityDecreaseLookingOnMob(player);
+
+//            for(ItemStack itemStack : player.getInventory().main){
+//                if(isFlower(itemStack)){
+//                    player.sendMessage(Text.literal("GetFlower"));
+//                }
+//            }
         }
+    }
+
+    private static boolean isFlower(ItemStack itemStack) {
+        if(itemStack == null) return false;
+        return itemStack.isOf(Items.DANDELION) || itemStack.isOf(Items.POPPY) ||
+                itemStack.isOf(Items.BLUE_ORCHID) || itemStack.isOf(Items.ALLIUM) ||
+                itemStack.isOf(Items.AZURE_BLUET) || itemStack.isOf(Items.RED_TULIP) ||
+                itemStack.isOf(Items.ORANGE_TULIP) || itemStack.isOf(Items.WHITE_TULIP) ||
+                itemStack.isOf(Items.PINK_TULIP) || itemStack.isOf(Items.OXEYE_DAISY) ||
+                itemStack.isOf(Items.CORNFLOWER) || itemStack.isOf(Items.LILY_OF_THE_VALLEY) ||
+                itemStack.isOf(Items.WITHER_ROSE);
     }
 
     private static void sanityDecreaseLookingOnMob(ServerPlayerEntity player) {
