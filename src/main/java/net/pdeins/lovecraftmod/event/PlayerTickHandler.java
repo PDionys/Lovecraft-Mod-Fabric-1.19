@@ -13,10 +13,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.LightType;
-import net.pdeins.lovecraftmod.util.IEntityDataSaver;
-import net.pdeins.lovecraftmod.util.JournalData;
-import net.pdeins.lovecraftmod.util.RaycastEntity;
-import net.pdeins.lovecraftmod.util.SanityData;
+import net.pdeins.lovecraftmod.util.*;
 
 public class PlayerTickHandler implements ServerTickEvents.StartTick{
     private static int darkTickCount, mobTickCount = 0;
@@ -29,6 +26,7 @@ public class PlayerTickHandler implements ServerTickEvents.StartTick{
             //Sync server data with client
             SanityData.syncSanity(((IEntityDataSaver) player).getPersistentData().getInt("sanity"), player);
             JournalData.syncJournal(player, ((IEntityDataSaver) player).getPersistentData());
+            ProgressionData.syncProgression(player, "spawnin_world");
             // Method for decrease sanity in the dark
             sanityDecreaseInTheDark(player);
             // Method for decrease sanity when looking on target mob

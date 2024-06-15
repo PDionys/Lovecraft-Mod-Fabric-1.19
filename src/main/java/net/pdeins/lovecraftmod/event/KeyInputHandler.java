@@ -14,6 +14,7 @@ import net.pdeins.lovecraftmod.client.screen.JournalScreen;
 import net.pdeins.lovecraftmod.networking.ModPackets;
 import net.pdeins.lovecraftmod.util.IEntityDataSaver;
 import net.pdeins.lovecraftmod.util.JournalData;
+import net.pdeins.lovecraftmod.util.ProgressionData;
 import net.pdeins.lovecraftmod.util.SanityData;
 import org.lwjgl.glfw.GLFW;
 
@@ -34,7 +35,7 @@ public class KeyInputHandler {
 
                 ClientPlayNetworking.send(ModPackets.PLUS_SANITY_ID, PacketByteBufs.create());
 //                ClientPlayNetworking.send(ModPackets.PLAY_SOUND_PAGE_TURN_ID, PacketByteBufs.create());
-                ClientPlayNetworking.send(ModPackets.ADD_JOURNAL_ID, PacketByteBufs.create());
+//                ClientPlayNetworking.send(ModPackets.ADD_JOURNAL_ID, PacketByteBufs.create());
             }
 
             if(journalKey.wasPressed()){
