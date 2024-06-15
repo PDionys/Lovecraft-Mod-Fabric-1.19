@@ -5,10 +5,11 @@ import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.server.network.ServerPlayerEntity;
-import net.pdeins.lovecraftmod.mixin.ModEntityDataSaverMixin;
 import net.pdeins.lovecraftmod.networking.ModPackets;
 
 public class ProgressionData {
+    private static final String SPAWNIN_WORLD = "spawnin_world";
+
     public static void setProgression(IEntityDataSaver player, String id){
         NbtCompound nbt = player.getPersistentData();
         nbt.putBoolean(id, true);
@@ -32,5 +33,9 @@ public class ProgressionData {
         NbtCompound newNbt = ((IEntityDataSaver) newPlayer).getPersistentData();
 
         newNbt.putBoolean(id, oldNbt.getBoolean(id));
+    }
+
+    public static String getSpawninWorld(){
+        return SPAWNIN_WORLD;
     }
 }

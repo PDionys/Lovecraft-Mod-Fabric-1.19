@@ -26,7 +26,7 @@ public class PlayerTickHandler implements ServerTickEvents.StartTick{
             //Sync server data with client
             SanityData.syncSanity(((IEntityDataSaver) player).getPersistentData().getInt("sanity"), player);
             JournalData.syncJournal(player, ((IEntityDataSaver) player).getPersistentData());
-            ProgressionData.syncProgression(player, "spawnin_world");
+            ProgressionData.syncProgression(player, ProgressionData.getSpawninWorld());
             // Method for decrease sanity in the dark
             sanityDecreaseInTheDark(player);
             // Method for decrease sanity when looking on target mob

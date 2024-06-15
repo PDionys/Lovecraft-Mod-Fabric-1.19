@@ -1,6 +1,5 @@
 package net.pdeins.lovecraftmod.util;
 
-import net.fabricmc.fabric.api.entity.FakePlayer;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.nbt.NbtCompound;
@@ -35,7 +34,7 @@ public class JournalData {
         }
     }
 
-    public static HashMap<Integer,String> getJournalList(IEntityDataSaver player){
+    public static HashMap<Integer,String> getJournalMap(IEntityDataSaver player){
         NbtCompound nbt = player.getPersistentData();
         HashMap<Integer, String> journalList = new HashMap<>();
         NbtList nbtList = nbt.getList("journalList", 8);

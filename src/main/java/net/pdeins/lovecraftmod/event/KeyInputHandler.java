@@ -14,8 +14,6 @@ import net.pdeins.lovecraftmod.client.screen.JournalScreen;
 import net.pdeins.lovecraftmod.networking.ModPackets;
 import net.pdeins.lovecraftmod.util.IEntityDataSaver;
 import net.pdeins.lovecraftmod.util.JournalData;
-import net.pdeins.lovecraftmod.util.ProgressionData;
-import net.pdeins.lovecraftmod.util.SanityData;
 import org.lwjgl.glfw.GLFW;
 
 import java.util.HashMap;
@@ -40,7 +38,7 @@ public class KeyInputHandler {
 
             if(journalKey.wasPressed()){
                 //Get Journal List
-                HashMap<Integer, String> pages = JournalData.getJournalList(((IEntityDataSaver) client.player));
+                HashMap<Integer, String> pages = JournalData.getJournalMap(((IEntityDataSaver) client.player));
                 //Journal key LOGIC
                 MinecraftClient.getInstance().setScreen(
                         new JournalScreen(Text.translatable("screen.lovecraftmod.screen_title"), 0, pages)

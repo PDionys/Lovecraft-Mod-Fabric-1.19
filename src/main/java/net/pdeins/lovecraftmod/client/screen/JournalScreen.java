@@ -16,7 +16,7 @@ import net.pdeins.lovecraftmod.networking.ModPackets;
 import org.lwjgl.glfw.GLFW;
 
 import java.util.HashMap;
-
+//TODO clear this class make more readable
 public class JournalScreen extends Screen {
     //textures
     private static final Identifier JOURNAL_BODY = new Identifier(LovecraftMod.MOD_ID,

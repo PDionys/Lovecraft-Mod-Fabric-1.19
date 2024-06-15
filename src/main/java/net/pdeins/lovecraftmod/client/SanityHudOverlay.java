@@ -9,7 +9,7 @@ import net.minecraft.util.Identifier;
 import net.pdeins.lovecraftmod.LovecraftMod;
 import net.pdeins.lovecraftmod.util.IEntityDataSaver;
 import net.pdeins.lovecraftmod.util.SanityData;
-
+//TODO clear this class make more readable
 public class SanityHudOverlay implements HudRenderCallback {
     private static final Identifier SANITY = new Identifier(LovecraftMod.MOD_ID,
             "textures/sanity/sanity.png");

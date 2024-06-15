@@ -10,7 +10,7 @@ public class OnDeathSaveHandler implements ServerPlayerEvents.CopyFrom{
     public void copyFromPlayer(ServerPlayerEntity oldPlayer, ServerPlayerEntity newPlayer, boolean alive) {
         if(!alive){
             JournalData.saveJournalAfterDeath(oldPlayer, newPlayer);
-            ProgressionData.saveProgressAfterDeath(oldPlayer, newPlayer, "spawnin_world");
+            ProgressionData.saveProgressAfterDeath(oldPlayer, newPlayer, ProgressionData.getSpawninWorld());
         }
     }
 }
