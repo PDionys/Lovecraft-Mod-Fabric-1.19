@@ -9,7 +9,7 @@ import net.pdeins.lovecraftmod.client.WriteAnimHudOverlay;
 import net.pdeins.lovecraftmod.sound.ModSounds;
 
 public class FirstLoadWorldHandler implements ServerEntityEvents.Load{
-    private static final int ONE_AND_HALF_SECOND = 1200;
+    private static final int ONE_AND_HALF_SECOND = 1100;
 
     @Override
     public void onLoad(Entity entity, ServerWorld world) {
@@ -19,7 +19,7 @@ public class FirstLoadWorldHandler implements ServerEntityEvents.Load{
                 //play sound
                 playWriteSound((ServerPlayerEntity) entity);
                 //play animation
-                WriteAnimHudOverlay.showHud();
+                WriteAnimHudOverlay.showAnimation();
             }catch (Exception e){
                 e.printStackTrace();
             }

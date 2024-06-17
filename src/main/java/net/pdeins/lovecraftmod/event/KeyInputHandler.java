@@ -33,6 +33,7 @@ public class KeyInputHandler {
                 //Something is doing when the key is pressed
 
                 ClientPlayNetworking.send(ModPackets.PLUS_SANITY_ID, PacketByteBufs.create());
+                WriteAnimHudOverlay.showAnimation();
             }
 
             if(journalKey.wasPressed()){
