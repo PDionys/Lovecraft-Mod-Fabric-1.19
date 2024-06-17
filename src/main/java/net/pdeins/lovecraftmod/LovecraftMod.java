@@ -2,9 +2,13 @@ package net.pdeins.lovecraftmod;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.text.Text;
 import net.pdeins.lovecraftmod.event.OnDeathSaveHandler;
 import net.pdeins.lovecraftmod.event.PlayerTickHandler;
 import net.pdeins.lovecraftmod.event.PlayerWorldJoinHandler;

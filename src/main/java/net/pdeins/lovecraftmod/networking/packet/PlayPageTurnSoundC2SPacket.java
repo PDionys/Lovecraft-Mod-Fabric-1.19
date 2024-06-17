@@ -11,9 +11,7 @@ import net.pdeins.lovecraftmod.sound.ModSounds;
 public class PlayPageTurnSoundC2SPacket {
     public static void receive(MinecraftServer server, ServerPlayerEntity player, ServerPlayNetworkHandler handler,
                                PacketByteBuf buf, PacketSender responseSender){
-        player.getWorld().playSound(
-                null,
-                player.getBlockPos(),
+        player.playSound(
                 ModSounds.PAGE_TURN_SOUND,
                 SoundCategory.PLAYERS,
                 1f,1f

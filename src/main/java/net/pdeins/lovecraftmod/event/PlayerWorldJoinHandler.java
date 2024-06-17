@@ -1,5 +1,6 @@
 package net.pdeins.lovecraftmod.event;
 
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
 import net.fabricmc.fabric.api.networking.v1.PacketSender;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import net.minecraft.server.MinecraftServer;
@@ -21,8 +22,8 @@ public class PlayerWorldJoinHandler implements ServerPlayConnectionEvents.Join{
             //Write journal
             JournalData.setJournalList(((IEntityDataSaver) player), "note.lovecraftmod.firstspawn_p1");
             JournalData.setJournalList(((IEntityDataSaver) player), "note.lovecraftmod.firstspawn_p2");
-            //Play animation
-            //Play "write" sound
+            //Play "write" sound and animation after load screen
+            ServerEntityEvents.ENTITY_LOAD.register(new  FirstLoadWorldHandler());
         }
     }
 }

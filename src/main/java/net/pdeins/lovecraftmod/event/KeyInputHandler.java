@@ -10,6 +10,7 @@ import net.minecraft.client.util.InputUtil;
 
 
 import net.minecraft.text.Text;
+import net.pdeins.lovecraftmod.client.WriteAnimHudOverlay;
 import net.pdeins.lovecraftmod.client.screen.JournalScreen;
 import net.pdeins.lovecraftmod.networking.ModPackets;
 import net.pdeins.lovecraftmod.util.IEntityDataSaver;
@@ -32,8 +33,7 @@ public class KeyInputHandler {
                 //Something is doing when the key is pressed
 
                 ClientPlayNetworking.send(ModPackets.PLUS_SANITY_ID, PacketByteBufs.create());
-//                ClientPlayNetworking.send(ModPackets.PLAY_SOUND_PAGE_TURN_ID, PacketByteBufs.create());
-//                ClientPlayNetworking.send(ModPackets.ADD_JOURNAL_ID, PacketByteBufs.create());
+                WriteAnimHudOverlay.showAnimation();
             }
 
             if(journalKey.wasPressed()){

@@ -9,6 +9,7 @@ import net.pdeins.lovecraftmod.LovecraftMod;
 public class ModSounds {
     public static final SoundEvent OPEN_BOOK_SOUND = registerSound("open_book");
     public static final SoundEvent PAGE_TURN_SOUND = registerSound("page_turn");
+    public static final SoundEvent WRITE_NOTE_SOUND = registerSound("write_note");
 
     private ModSounds(){
 

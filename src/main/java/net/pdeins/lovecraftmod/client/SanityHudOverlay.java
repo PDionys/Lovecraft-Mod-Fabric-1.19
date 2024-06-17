@@ -51,7 +51,6 @@ public class SanityHudOverlay implements HudRenderCallback {
 
         RenderSystem.setShaderTexture(0, SANITY_FILL);
         int one_sanity_segment = Math.round(MAX_SANITY_FILL / SanityData.getMaxSanity());
-//        System.out.println(one_sanity_segment);
         if(((IEntityDataSaver) client.player).getPersistentData().getInt("sanity") == SanityData.getMaxSanity()){
             DrawableHelper.drawTexture(matrixStack, x - 92 + 1 + 11, y - 50, 0f, 0f, MAX_SANITY_FILL, 10, MAX_SANITY_FILL,10);
         }else{
