@@ -12,9 +12,7 @@ public class PlayOpenBookSoundC2SPacket {
     public static void receive(MinecraftServer server, ServerPlayerEntity player, ServerPlayNetworkHandler handler,
                                PacketByteBuf buf, PacketSender responseSender){
         //TODO make open sound louder
-        player.getWorld().playSound(
-                null,
-                player.getBlockPos(),
+        player.playSound(
                 ModSounds.OPEN_BOOK_SOUND,
                 SoundCategory.PLAYERS,
                 1f,1f

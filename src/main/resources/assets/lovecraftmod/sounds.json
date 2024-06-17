@@ -9,5 +9,11 @@
     "sounds": [
       "lovecraftmod:page_turn"
     ]
+  },
+
+  "write_note": {
+    "sounds": [
+      "lovecraftmod:write_note"
+    ]
   }
 }
