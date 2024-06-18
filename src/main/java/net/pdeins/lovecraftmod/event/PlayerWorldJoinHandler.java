@@ -20,7 +20,7 @@ public class PlayerWorldJoinHandler implements ServerPlayConnectionEvents.Join{
             //Set progress
             ProgressionData.setProgression(((IEntityDataSaver) player), ProgressionData.getSpawninWorld());
             //Write journal
-            JournalData.setJournalList(((IEntityDataSaver) player), ProgressionData.getSpawninWorld());
+            JournalData.setJournalList(((IEntityDataSaver) player), ProgressionData.getSpawninWorld(), server);
             //Play "write" sound and animation after load screen
             ServerEntityEvents.ENTITY_LOAD.register(new  FirstLoadWorldHandler());
         }

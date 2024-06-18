@@ -74,7 +74,7 @@ public class JournalScreen extends Screen {
 
         //draw text;
         final MultilineText multilineText = MultilineText.create(textRenderer,
-                Text.literal(pages.get(pageNum)), 115);
+                Text.of(pages.get(pageNum)), 115);
         multilineText.draw(matrices, texturePosX+25,texturePosY+20, 10,0xFF000000);
     }
 

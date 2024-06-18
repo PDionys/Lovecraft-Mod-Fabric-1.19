@@ -6,8 +6,12 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtList;
 import net.minecraft.nbt.NbtString;
 import net.minecraft.network.PacketByteBuf;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableTextContent;
+import net.minecraft.util.Language;
 import net.pdeins.lovecraftmod.networking.ModPackets;
 
 import java.util.Arrays;
@@ -20,21 +24,37 @@ public class JournalData {
             new Journal(ProgressionData.getSpawninWorld(), "note.lovecraftmod.firstspawn_p2")
     };
 
-    public static void setJournalList(IEntityDataSaver player, String progress){
+    public static void setJournalList(IEntityDataSaver player, String progress, MinecraftServer server){
+        ServerWorld world = server.getOverworld();
         //get player data
         NbtCompound nbt = player.getPersistentData();
         NbtList nbtList = nbt.getList("journalList",8);
         //load list of needed strings
-        addToNbtList(progress, nbtList);
+        addToNbtList(progress, nbtList, world);
         nbt.put("journalList", nbtList);
         //sync data
         syncJournal((ServerPlayerEntity) player, nbt);
     }
 
-    private static void addToNbtList(String progress, NbtList nbtList) {
+    private static void addToNbtList(String progress, NbtList nbtList, ServerWorld world) {
+        int iter = 0;
         for(Journal j : journalPages){
             if(j.getProgress().equals(progress)){
-                nbtList.add(NbtString.of(j.getJournalLine()));
+                String line = "";
+                TranslatableTextContent translatableTextContent = ((TranslatableTextContent) Text.translatable(
+                        j.getJournalLine()).getContent());
+                if(iter == 0){
+                    Long _day = (world.getTimeOfDay()/24000)+1;
+                    Long _time = world.getTimeOfDay() - (24000*(_day-1));
+                    Long _hour = _time / 1000;
+                    Long _minute = (_time - (_hour*1000))/16;
+                    line = "Day: " + _day +" (" + _hour + "h" + _minute + "m" + ")\n"
+                            + Language.getInstance().get(translatableTextContent.getKey());
+                }else {
+                    line = Language.getInstance().get(translatableTextContent.getKey());
+                }
+                nbtList.add(NbtString.of(line));
+                iter++;
             }
         }
     }
