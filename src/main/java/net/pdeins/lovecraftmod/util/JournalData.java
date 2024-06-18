@@ -19,10 +19,10 @@ import java.util.HashMap;
 
 
 public class JournalData {
-    private static final Journal[] journalPages = {
-            new Journal(ProgressionData.getSpawninWorld(), "note.lovecraftmod.firstspawn_p1"),
-            new Journal(ProgressionData.getSpawninWorld(), "note.lovecraftmod.firstspawn_p2")
-    };
+    private static final HashMap<String, String> journalPagesMap = new HashMap<String, String>(){{
+        put(ProgressionData.getSpawninWorld(), "note.lovecraftmod.firstspawn");
+    }};
+
 
     public static void setJournalList(IEntityDataSaver player, String progress, MinecraftServer server){
         ServerWorld world = server.getOverworld();
@@ -37,25 +37,23 @@ public class JournalData {
     }
 
     private static void addToNbtList(String progress, NbtList nbtList, ServerWorld world) {
-        int iter = 0;
-        for(Journal j : journalPages){
-            if(j.getProgress().equals(progress)){
-                String line = "";
-                TranslatableTextContent translatableTextContent = ((TranslatableTextContent) Text.translatable(
-                        j.getJournalLine()).getContent());
-                if(iter == 0){
-                    Long _day = (world.getTimeOfDay()/24000)+1;
-                    Long _time = world.getTimeOfDay() - (24000*(_day-1));
-                    Long _hour = _time / 1000;
-                    Long _minute = (_time - (_hour*1000))/16;
-                    line = "Day: " + _day +" (" + _hour + "h" + _minute + "m" + ")\n"
-                            + Language.getInstance().get(translatableTextContent.getKey());
-                }else {
-                    line = Language.getInstance().get(translatableTextContent.getKey());
-                }
-                nbtList.add(NbtString.of(line));
-                iter++;
+        String journalPageByProgress = journalPagesMap.get(progress);
+        TranslatableTextContent translatableTextContent = ((TranslatableTextContent) Text.translatable(journalPageByProgress)
+                .getContent());
+        String[] splitJournalPages = Language.getInstance().get(translatableTextContent.getKey()).split("\n");
+        String line = "";
+        for (int i = 0; i<splitJournalPages.length; i++){
+            if(i == 0){
+                Long _day = (world.getTimeOfDay()/24000)+1;
+                Long _time = world.getTimeOfDay() - (24000*(_day-1));
+                Long _hour = _time / 1000;
+                Long _minute = (_time - (_hour*1000))/16;
+                line = "Day: " + _day +" (" + _hour + "h" + _minute + "m" + ")\n"
+                        + splitJournalPages[i];
+            }else {
+                line = splitJournalPages[i];
             }
+            nbtList.add(NbtString.of(line));
         }
     }
 
