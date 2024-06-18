@@ -13,6 +13,7 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.pdeins.lovecraftmod.LovecraftMod;
 import net.pdeins.lovecraftmod.networking.ModPackets;
+import net.pdeins.lovecraftmod.util.DrawModTexture;
 import org.lwjgl.glfw.GLFW;
 
 import java.util.HashMap;
@@ -31,19 +32,16 @@ public class JournalScreen extends Screen {
             "textures/screen/page_turn_prev_hover.png");
     //textures parameters
     private static final int texturePosY = 0;
-    private static int nextPosX, nextPosY, prevPosX, prevPosY, texturePosX;
-    private boolean prevButton, nextButton;
+    private static int nextPosX, nextPosY, prevPosX, prevPosY, texturePosX, pageType;
+    private static final int journalTextureWidth = 160, journalTextureHeight = 190,
+    nextPageTextureWidth = 12, nextPageTextureHeight = 12;
     //create dictionary of pages like: 0 : "Page 1 text", 1 : "Page 2 text" etc.
-    private HashMap<Integer, String> pages = new HashMap<>();
-    private int pageNum = 0;
-    //create method of construct this dictionary from ListString
-    //create functionality of page changes
+    private final HashMap<Integer, String> pages;
+    private int pageNum;
 
     public JournalScreen(Text title, int pageNum, HashMap<Integer, String> pages) {
         super(title);
 
-//        pages.put(0, "note.lovecraftmod.firstspawn_p1");
-//        pages.put(1, "note.lovecraftmod.firstspawn_p2");
         this.pages = pages;
         this.pageNum = pageNum;
     }
@@ -59,57 +57,49 @@ public class JournalScreen extends Screen {
     public void render(MatrixStack matrices, int mouseX, int mouseY, float delta) {
         //draw texture and background
         renderBackground(matrices);
-
         super.render(matrices, mouseX, mouseY, delta);
 
         //render button for page turn
         if(pageNum == 0){
-            nextButton=true;
-            prevButton = false;
-            //render one clickable texture
+            pageType = 1;
             renderNextPageTexture(matrices, texturePosX, texturePosY, mouseX, mouseY);
         }else if(pageNum == pages.size()-1){
-            nextButton = false;
-            prevButton = true;
+            pageType = -1;
             renderPrevPageTexture(matrices, texturePosX, texturePosY, mouseX, mouseY);
         }else{
-            nextButton = true;
-            prevButton = true;
+            pageType = 0;
             renderNextPageTexture(matrices, texturePosX, texturePosY, mouseX, mouseY);
             renderPrevPageTexture(matrices, texturePosX, texturePosY, mouseX, mouseY);
         }
 
         //draw text;
         final MultilineText multilineText = MultilineText.create(textRenderer,
-                Text.translatable(pages.get(pageNum)), 115);
+                Text.literal(pages.get(pageNum)), 115);
         multilineText.draw(matrices, texturePosX+25,texturePosY+20, 10,0xFF000000);
     }
 
     @Override
     public boolean mouseClicked(double mouseX, double mouseY, int button) {
         //check if it in bound of right texture
-        if(isWithinNextBounds(mouseX, mouseY) && nextButton){
+        if(isWithinBounds(mouseX, mouseY, nextPosX, nextPosY) && (pageType == 1 || pageType == 0)){
             //perform page flip
             onTextureClick(1);
             return true;
-        }else if(isWithinPrevBounds(mouseX,mouseY) && prevButton){
+        }else if(isWithinBounds(mouseX, mouseY, prevPosX, prevPosY) && (pageType == -1 || pageType == 0)){
             onTextureClick(0);
             return true;
         }
-
         return super.mouseClicked(mouseX, mouseY, button);
     }
-    private boolean isWithinNextBounds(double mouseX, double mouseY){
-        return mouseX>= nextPosX && mouseX<=(nextPosX +12) && mouseY>= nextPosY && mouseY <= nextPosY +12;
+
+    private boolean isWithinBounds(double mouseX, double mouseY, int buttonPosX, int buttonPosY){
+        return mouseX>= buttonPosX && mouseX<=(buttonPosX +12) && mouseY>= buttonPosY && mouseY <= buttonPosY +12;
     }
-    private boolean isWithinPrevBounds(double mouseX, double mouseY){
-        return mouseX>= prevPosX && mouseX<=(prevPosX +12) && mouseY>= prevPosY && mouseY <= prevPosY +12;
-    }
+
     private void onTextureClick(int direction){
         //save cursor position
         double mouseX = client.mouse.getX();
         double mouseY = client.mouse.getY();
-
         //render new page
         MinecraftClient.getInstance().setScreen(null);
         switch (direction){
@@ -135,46 +125,33 @@ public class JournalScreen extends Screen {
     public void renderBackground(MatrixStack matrices) {
         //fill screen with slightly visible black color
         fill(matrices, 0,0, this.width, this.height, 0xAA000000);
-
         //add texture of journal
-        RenderSystem.setShader(GameRenderer::getPositionTexProgram);
-        RenderSystem.setShaderColor(1f,1f,1f,1f);
-        RenderSystem.setShaderTexture(0, JOURNAL_BODY);
-        DrawableHelper.drawTexture(matrices, texturePosX, texturePosY, 0f, 0f, 160, 190, 160,190);
-
+        DrawModTexture.drawCustomTexture(matrices, JOURNAL_BODY, texturePosX, texturePosY, journalTextureWidth, journalTextureHeight);
     }
 
     private void renderNextPageTexture(MatrixStack matrices, int pagePosX, int pagePosY, int mouseX, int mouseY){
         //add texture for page flip
         nextPosX = pagePosX + 110;
-        nextPosY = pagePosY+165;
+        nextPosY = pagePosY + 165;
 
-        RenderSystem.setShader(GameRenderer::getPositionTexProgram);
-        RenderSystem.setShaderColor(1f,1f,1f,1f);
-        if(isWithinNextBounds(mouseX, mouseY)) {
-            RenderSystem.setShaderTexture(0, PAGE_TURN_NEXT_HOVER);
-            DrawableHelper.drawTexture(matrices, nextPosX, nextPosY, 0f, 0f,
-                    12, 12, 12, 12);
+        if(isWithinBounds(mouseX, mouseY, nextPosX, nextPosY)) {
+            DrawModTexture.drawCustomTexture(matrices, PAGE_TURN_NEXT_HOVER, nextPosX, nextPosY,
+                    nextPageTextureWidth, nextPageTextureHeight);
         }else {
-            RenderSystem.setShaderTexture(0, PAGE_TURN_NEXT);
-            DrawableHelper.drawTexture(matrices, nextPosX, nextPosY, 0f, 0f,
-                    12, 12, 12, 12);
+            DrawModTexture.drawCustomTexture(matrices, PAGE_TURN_NEXT, nextPosX, nextPosY,
+                    nextPageTextureWidth, nextPageTextureHeight);
         }
     }
     private void renderPrevPageTexture(MatrixStack matrices, int pagePosX, int pagePosY, int mouseX, int mouseY){
         prevPosX = pagePosX + 90;
         prevPosY = pagePosY + 165;
 
-        RenderSystem.setShader(GameRenderer::getPositionTexProgram);
-        RenderSystem.setShaderColor(1f,1f,1f,1f);
-        if(isWithinPrevBounds(mouseX, mouseY)){
-            RenderSystem.setShaderTexture(0, PAGE_TURN_PREV_HOVER);
-            DrawableHelper.drawTexture(matrices, prevPosX, prevPosY, 0f, 0f,
-                    12, 12, 12, 12);
+        if(isWithinBounds(mouseX, mouseY, prevPosX, prevPosY)){
+            DrawModTexture.drawCustomTexture(matrices, PAGE_TURN_PREV_HOVER, prevPosX, prevPosY,
+                    nextPageTextureWidth, nextPageTextureHeight);
         }else {
-            RenderSystem.setShaderTexture(0, PAGE_TURN_PREV);
-            DrawableHelper.drawTexture(matrices, prevPosX, prevPosY, 0f, 0f,
-                    12, 12, 12, 12);
+            DrawModTexture.drawCustomTexture(matrices, PAGE_TURN_PREV, prevPosX, prevPosY,
+                    nextPageTextureWidth, nextPageTextureHeight);
         }
     }
 

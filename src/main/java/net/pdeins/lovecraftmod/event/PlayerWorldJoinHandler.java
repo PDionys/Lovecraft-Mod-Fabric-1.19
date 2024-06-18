@@ -20,8 +20,7 @@ public class PlayerWorldJoinHandler implements ServerPlayConnectionEvents.Join{
             //Set progress
             ProgressionData.setProgression(((IEntityDataSaver) player), ProgressionData.getSpawninWorld());
             //Write journal
-            JournalData.setJournalList(((IEntityDataSaver) player), "note.lovecraftmod.firstspawn_p1");
-            JournalData.setJournalList(((IEntityDataSaver) player), "note.lovecraftmod.firstspawn_p2");
+            JournalData.setJournalList(((IEntityDataSaver) player), ProgressionData.getSpawninWorld());
             //Play "write" sound and animation after load screen
             ServerEntityEvents.ENTITY_LOAD.register(new  FirstLoadWorldHandler());
         }
