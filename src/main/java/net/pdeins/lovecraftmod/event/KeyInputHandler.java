@@ -10,8 +10,6 @@ import net.minecraft.client.util.InputUtil;
 
 
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableTextContent;
-import net.minecraft.util.Language;
 import net.pdeins.lovecraftmod.client.WriteAnimHudOverlay;
 import net.pdeins.lovecraftmod.client.screen.JournalScreen;
 import net.pdeins.lovecraftmod.networking.ModPackets;

@@ -7,6 +7,7 @@ import net.minecraft.client.gui.DrawableHelper;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
 import net.pdeins.lovecraftmod.LovecraftMod;
+import net.pdeins.lovecraftmod.util.DrawModTexture;
 import net.pdeins.lovecraftmod.util.IEntityDataSaver;
 import net.pdeins.lovecraftmod.util.SanityData;
 //TODO clear this class make more readable
@@ -22,7 +23,7 @@ public class SanityHudOverlay implements HudRenderCallback {
     private static final Identifier SANITY_FILL = new Identifier(LovecraftMod.MOD_ID,
             "textures/sanity/sanity_fill.png");
 
-    private static final int MAX_SANITY_FILL = 68;
+    private static final int MAX_SANITY_FILL = 68, sanityTextureSize = 10;
 
 
     @Override
@@ -37,25 +38,28 @@ public class SanityHudOverlay implements HudRenderCallback {
             x = width / 2;
             y = height;
         }
+        int sanityPosX = x - 92;
+        int sanityPosY = y - 50;
 
-        RenderSystem.setShaderTexture(0, SANITY);
-        RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
-        DrawableHelper.drawTexture(matrixStack, x - 92, y - 50, 0f, 0f, 10, 10, 10,10);
-        RenderSystem.setShaderTexture(0, EMPTY_SANITY_LEFT);
-        DrawableHelper.drawTexture(matrixStack, x - 92 + 1 + 10, y - 50, 0f, 0f, 10, 10, 10,10);
-        RenderSystem.setShaderTexture(0, EMPTY_SANITY_CENTER);
+        DrawModTexture.drawCustomTexture(matrixStack, SANITY, sanityPosX, sanityPosY, sanityTextureSize, sanityTextureSize);
+        DrawModTexture.drawCustomTexture(matrixStack, EMPTY_SANITY_LEFT, sanityPosX + 11, sanityPosY,
+                sanityTextureSize, sanityTextureSize);
+
         for(int i = 0; i < 5; i++)
-            DrawableHelper.drawTexture(matrixStack, x - 92 + 1 + 20 + (i*10), y - 50, 0f, 0f, 10, 10, 10,10);
-        RenderSystem.setShaderTexture(0, EMPTY_SANITY_RIGHT);
-        DrawableHelper.drawTexture(matrixStack, x - 92 + 1 + 20 + 50, y - 50, 0f, 0f, 10, 10, 10,10);
+            DrawModTexture.drawCustomTexture(matrixStack, EMPTY_SANITY_CENTER, sanityPosX + 21 + (i*10), sanityPosY,
+                    sanityTextureSize, sanityTextureSize);
 
-        RenderSystem.setShaderTexture(0, SANITY_FILL);
+        DrawModTexture.drawCustomTexture(matrixStack, EMPTY_SANITY_RIGHT, sanityPosX + 71, sanityPosY,
+                sanityTextureSize, sanityTextureSize);
+
         int one_sanity_segment = Math.round(MAX_SANITY_FILL / SanityData.getMaxSanity());
         if(((IEntityDataSaver) client.player).getPersistentData().getInt("sanity") == SanityData.getMaxSanity()){
-            DrawableHelper.drawTexture(matrixStack, x - 92 + 1 + 11, y - 50, 0f, 0f, MAX_SANITY_FILL, 10, MAX_SANITY_FILL,10);
+            DrawModTexture.drawCustomTexture(matrixStack, SANITY_FILL, sanityPosX + 12, sanityPosY,
+                    MAX_SANITY_FILL, sanityTextureSize);
         }else{
             int current_sanity = one_sanity_segment * ((IEntityDataSaver) client.player).getPersistentData().getInt("sanity");
-            DrawableHelper.drawTexture(matrixStack, x - 92 + 1 + 11, y - 50, 0f, 0f, current_sanity, 10, current_sanity,10);
+            DrawModTexture.drawCustomTexture(matrixStack, SANITY_FILL, sanityPosX + 12, sanityPosY,
+                    current_sanity, sanityTextureSize);
         }
     }
 }
