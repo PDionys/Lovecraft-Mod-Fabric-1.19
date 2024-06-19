@@ -14,8 +14,8 @@ public class JournalC2SPacket {
     public static void receive(MinecraftServer server, ServerPlayerEntity player, ServerPlayNetworkHandler handler,
                                PacketByteBuf buf, PacketSender responseSender){
         //Everything here is on the server!!
-        JournalData.setJournalList(((IEntityDataSaver) player), "note.lovecraftmod.firstspawn_p1");
-        JournalData.setJournalList(((IEntityDataSaver) player), "note.lovecraftmod.firstspawn_p2");
+        JournalData.setJournalList(((IEntityDataSaver) player), "note.lovecraftmod.firstspawn_p1", server);
+        JournalData.setJournalList(((IEntityDataSaver) player), "note.lovecraftmod.firstspawn_p2", server);
         //Send total amount
         player.sendMessage(Text.literal("Lines add to journal"));
     }

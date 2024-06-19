@@ -7,6 +7,7 @@ import net.minecraft.client.gui.DrawableHelper;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
 import net.pdeins.lovecraftmod.LovecraftMod;
+import net.pdeins.lovecraftmod.util.DrawModTexture;
 
 public class WriteAnimHudOverlay implements HudRenderCallback {
     private static final Identifier[] WRITE_NOTE_ANIM = {
@@ -32,15 +33,9 @@ public class WriteAnimHudOverlay implements HudRenderCallback {
                         || System.currentTimeMillis() - displayStartTime >= (displayDuration/3)*2)
                     FRAME = 0;
                 else FRAME = 1;
-                renderFrame(matrixStack, x, y, WRITE_NOTE_ANIM[FRAME]);
+                DrawModTexture.drawCustomTexture(matrixStack, WRITE_NOTE_ANIM[FRAME], x, y, textureSize, textureSize);
             }
         }
-    }
-
-    private void renderFrame(MatrixStack matrixStack, int x, int y, Identifier frame) {
-        RenderSystem.setShaderTexture(0, frame);
-        RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
-        DrawableHelper.drawTexture(matrixStack, x, y, 0f, 0f, textureSize, textureSize, textureSize,textureSize);
     }
 
     public static void showAnimation(){
