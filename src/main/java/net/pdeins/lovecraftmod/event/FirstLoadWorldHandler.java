@@ -5,8 +5,10 @@ import net.minecraft.entity.Entity;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
+import net.minecraft.text.Text;
 import net.pdeins.lovecraftmod.client.WriteAnimHudOverlay;
 import net.pdeins.lovecraftmod.sound.ModSounds;
+import net.pdeins.lovecraftmod.util.ProgressRecord;
 
 public class FirstLoadWorldHandler implements ServerEntityEvents.Load{
     private static final int ONE_AND_HALF_SECOND = 1100;
@@ -16,10 +18,7 @@ public class FirstLoadWorldHandler implements ServerEntityEvents.Load{
         if(entity.isPlayer()){
             try{
                 Thread.sleep(ONE_AND_HALF_SECOND);
-                //play sound
-                playWriteSound((ServerPlayerEntity) entity);
-                //play animation
-                WriteAnimHudOverlay.showAnimation();
+                ProgressRecord.playSoundAndAnimation((ServerPlayerEntity) entity);
             }catch (Exception e){
                 e.printStackTrace();
             }

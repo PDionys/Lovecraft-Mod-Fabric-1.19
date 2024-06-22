@@ -24,6 +24,7 @@ public abstract class ModEntityDataSaverMixin implements IEntityDataSaver {
             this.persistentData = new NbtCompound();
             persistentData.putInt("sanity", SanityData.getMaxSanity());
             persistentData.putBoolean("spawnin_world", false);
+            persistentData.putBoolean("flower_sanity", false);
         }
 
         return persistentData;

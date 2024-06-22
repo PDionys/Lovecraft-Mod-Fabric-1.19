@@ -8,7 +8,10 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.pdeins.lovecraftmod.networking.ModPackets;
 
 public class ProgressionData {
-    private static final String SPAWNIN_WORLD = "spawnin_world";
+    private static final String[] PROGRESS_ID = {
+            "spawnin_world",
+            "flower_sanity"
+    };
 
     public static void setProgression(IEntityDataSaver player, String id){
         NbtCompound nbt = player.getPersistentData();
@@ -35,7 +38,11 @@ public class ProgressionData {
         newNbt.putBoolean(id, oldNbt.getBoolean(id));
     }
 
-    public static String getSpawninWorld(){
-        return SPAWNIN_WORLD;
+    public static String[] getProgressId(){
+        return PROGRESS_ID;
+    }
+
+    public static String getProgressIdElement(int element){
+        return PROGRESS_ID[element];
     }
 }

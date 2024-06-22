@@ -22,33 +22,18 @@ public class PlayerTickHandler implements ServerTickEvents.StartTick{
     @Override
     public void onStartTick(MinecraftServer server) {
         for(ServerPlayerEntity player : server.getPlayerManager().getPlayerList()){
-            //TODO check how it work in online
+            //TODO check how it work in online AND AVTOMAT SYNC
             //Sync server data with client
             SanityData.syncSanity(((IEntityDataSaver) player).getPersistentData().getInt("sanity"), player);
             JournalData.syncJournal(player, ((IEntityDataSaver) player).getPersistentData());
-            ProgressionData.syncProgression(player, ProgressionData.getSpawninWorld());
+            for(String progress : ProgressionData.getProgressId()){
+                ProgressionData.syncProgression(player, progress);
+            }
             // Method for decrease sanity in the dark
             sanityDecreaseInTheDark(player);
             // Method for decrease sanity when looking on target mob
             sanityDecreaseLookingOnMob(player);
-
-//            for(ItemStack itemStack : player.getInventory().main){
-//                if(isFlower(itemStack)){
-//                    player.sendMessage(Text.literal("GetFlower"));
-//                }
-//            }
         }
-    }
-
-    private static boolean isFlower(ItemStack itemStack) {
-        if(itemStack == null) return false;
-        return itemStack.isOf(Items.DANDELION) || itemStack.isOf(Items.POPPY) ||
-                itemStack.isOf(Items.BLUE_ORCHID) || itemStack.isOf(Items.ALLIUM) ||
-                itemStack.isOf(Items.AZURE_BLUET) || itemStack.isOf(Items.RED_TULIP) ||
-                itemStack.isOf(Items.ORANGE_TULIP) || itemStack.isOf(Items.WHITE_TULIP) ||
-                itemStack.isOf(Items.PINK_TULIP) || itemStack.isOf(Items.OXEYE_DAISY) ||
-                itemStack.isOf(Items.CORNFLOWER) || itemStack.isOf(Items.LILY_OF_THE_VALLEY) ||
-                itemStack.isOf(Items.WITHER_ROSE);
     }
 
     private static void sanityDecreaseLookingOnMob(ServerPlayerEntity player) {

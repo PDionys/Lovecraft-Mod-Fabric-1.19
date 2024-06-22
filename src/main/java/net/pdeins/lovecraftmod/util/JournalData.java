@@ -20,7 +20,8 @@ import java.util.HashMap;
 
 public class JournalData {
     private static final HashMap<String, String> journalPagesMap = new HashMap<String, String>(){{
-        put(ProgressionData.getSpawninWorld(), "note.lovecraftmod.firstspawn");
+        put(ProgressionData.getProgressIdElement(0), "note.lovecraftmod.firstspawn");
+        put(ProgressionData.getProgressIdElement(1), "note.lovecraftmod.flowersanity");
     }};
 
 
