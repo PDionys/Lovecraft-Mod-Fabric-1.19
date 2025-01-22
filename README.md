@@ -12,7 +12,9 @@
 - A new player resource, "Sanity," has been added.  
 - Mechanics for resource depletion have been implemented: upon contact with a monster or staying in darkness.  
 - A notes system with audio and visual representation has been created.  
-- Mechanisms for adding entries to notes have been implemented: during the first login to the server or after picking up a specific item.  
+- Mechanisms for adding entries to notes have been implemented: during the first login to the server or after picking up a specific item.
+
+
 **Українська**
 - Додано новий ресурс для гравця — "Sanity".
 - Реалізовано механіки втрати ресурсу: при контакті з монстром або перебуванні в темряві.
