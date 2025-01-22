@@ -1,6 +1,6 @@
 # Lovecraft-Mod-Fabric-1.19
 **Short Description**: The project was created to study a new API and gain experience working with a released product. The focus was on solving tasks that required creative approaches and innovative solutions.
-**Короткий опис**: Проєкт створений з метою вивчення нового API та отримання досвіду роботи з релізним продуктом. Основна увага приділялася вирішенню завдань, що вимагали креативного підходу та нестандартних рішень.
+\n**Короткий опис**: Проєкт створений з метою вивчення нового API та отримання досвіду роботи з релізним продуктом. Основна увага приділялася вирішенню завдань, що вимагали креативного підходу та нестандартних рішень.
 
 ## 🔧 Technologies Used/Використані технології
 - Java, Fabric API, Audacity, Minecraft API 
@@ -18,5 +18,5 @@
 - Реалізовано механізми поповнення записів у нотатки: під час першого входу на сервер або після підбору певного предмета.
 
 ## 🚀 How to Run/Як запустити
-1. Крок 1.
-2. Крок 2.
+1. 
+2. 
